@@ -1,7 +1,10 @@
 import "react-native-gesture-handler";
 import "react-native-reanimated";
+import { enableScreens } from "react-native-screens";
+enableScreens();
+
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -83,9 +86,19 @@ const DrawerNavigation = () => {
 };
 
 export default function App() {
+  const [dbReady, setDbReady] = useState(false);
+
   useEffect(() => {
-    initDatabase();
+    const init = async () => {
+      await initDatabase();
+      setDbReady(true);
+    };
+    init();
   }, []);
+
+  if (!dbReady) {
+    return null;
+  }
 
   return (
     <>

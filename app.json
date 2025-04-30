@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "spendly",
+    "name": "Spendly",
     "slug": "spendly",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#2dbd85"
     },
     "ios": {
       "supportsTablet": true
@@ -18,8 +18,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
+        "backgroundColor": "#2dbd85"
+      },
+      "package": "com.ferdoushasanpr.spendly"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -41,6 +42,11 @@
           }
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e817837c-7e32-4bd2-8c66-234928205aad"
+      }
+    }
   }
 }
